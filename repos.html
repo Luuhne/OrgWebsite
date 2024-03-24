@@ -1,0 +1,27 @@
+--- 
+title: Repository 
+layout: default 
+--- 
+<div>
+  <p> Redirect from <i>
+      <span id="old_domain">example.com</span>
+    </i> to <i>
+      <span id="new_domain">example2.com</span>. </i>
+    <br />
+    <small> If you are not redirected, click on the <a href="#" id="instruction">link</a>. </small>
+  </p>
+</div>
+<script>
+  var protocol = window.location.protocol;
+  var domain = window.location.hostname;
+  var _port = window.location.port;
+  var port = _port == "80" ? "" : _port == "443" ? "" : _port;
+  var path = window.location.pathname.replace("/", "");
+  var url = `${protocol}//${domain}:${port}/${path}`;
+  var newUrl = `https://github.com/PwnMoon`;
+  document.getElementById("old_domain").innerHTML = url.replace(`${protocol}//`, "");
+  document.getElementById("new_domain").innerHTML = newUrl.replace(`${protocol}//`, "");
+  document.getElementById("instruction").href = newUrl;
+  window.location.href = newUrl;
+  window.location.replace(newUrl);
+</script>
