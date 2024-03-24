@@ -1,5 +1,5 @@
 --- 
-title: Repository 
+title: Repositories 
 layout: default 
 --- 
 <div>
@@ -18,7 +18,7 @@ layout: default
   var port = _port == "80" ? "" : _port == "443" ? "" : _port;
   var path = window.location.pathname.replace("/", "");
   var url = `${protocol}//${domain}:${port}/${path}`;
-  var newUrl = `https://github.com/PwnMoon`;
+  var newUrl = `https://github.com/PwnMoon?tab=repositories`;
   document.getElementById("old_domain").innerHTML = url.replace(`${protocol}//`, "");
   document.getElementById("new_domain").innerHTML = newUrl.replace(`${protocol}//`, "");
   document.getElementById("instruction").href = newUrl;
