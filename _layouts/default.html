@@ -1,28 +1,22 @@
---- 
-title: 404 
-layout: default 
---- 
-<div>
-  <p> Redirect from <i>
-      <span id="old_domain">example.com</span>
-    </i> to <i>
-      <span id="new_domain">example2.com</span>. </i>
-    <br />
-    <small> If you are not redirected, click on the <a href="#" id="instruction">link</a>. </small>
-  </p>
-</div>
-<script>
-  var protocol = window.location.protocol;
-  var domain = window.location.hostname;
-  var _port = window.location.port;
-  var port = _port == "80" ? "" : _port == "443" ? "" : _port;
-  var path = window.location.pathname.replace("/", "");
-  var url = `${protocol}//${domain}:${port}/${path}`;
-  var newDomain = domain.replace(domain, "pwnmoon.github.io");
-  var newUrl = `${protocol}//${newDomain}/${path}`;
-  document.getElementById("old_domain").innerHTML = url.replace(`${protocol}//`, "");
-  document.getElementById("new_domain").innerHTML = newUrl.replace(`${protocol}//`, "");
-  document.getElementById("instruction").href = newUrl;
-  window.location.href = newUrl;
-  window.location.replace(newUrl);
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }} / MoonPwn Org.</title>
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #f5f5f5;
+      }
+      a {
+        color: #f5f5f5;
+      }
+      small {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>
