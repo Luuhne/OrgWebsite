@@ -1,0 +1,11 @@
+timezone: Europe/Paris
+baseurl: ""
+
+github:
+  domain:
+    main: "github.com"
+    pages: "github.io"
+    api: "api.github.com"
+  username:
+    current: "moonpwn"
+    redirect: "pwnmoon"

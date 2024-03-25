@@ -1,22 +1,69 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="//{{ site.github.domain.api }}" />
     <meta charset="utf-8" />
     <title>{{ page.title }} / MoonPwn Org.</title>
-    <style>
-      body {
-        background-color: #0a0a0a;
-        color: #f5f5f5;
-      }
-      a {
-        color: #f5f5f5;
-      }
-      small {
-        font-weight: bold;
-      }
-    </style>
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    <link href="{{ site.url }}/assets/css/main.css" rel="stylesheet" />
+    <script>
+      // Config.js
+      const Web = {
+        Site: {
+          URL: "{{ site.url }}",
+          Time: "{{ site.time }}",
+        },
+        Page: {
+          URL: "{{ site.url }}{{ page.url }}",
+          Current: "{{ page.url }}",
+          Title: "{{ page.title }}",
+        },
+      };
+      const GitHub = {
+        URL: {
+          MAIN: "https://{{ site.github.domain.main }}",
+          API: "https://{{ site.github.domain.api }}",
+          Pages: {
+            Current:
+              "https://{{ site.github.username.current }}.{{ site.github.domain.pages }}",
+            Redirect:
+              "https://{{ site.github.username.redirect }}.{{ site.github.domain.pages }}",
+          },
+        },
+        Username: {
+          Current: "{{ site.github.username.current }}",
+          Redirect: "{{ site.github.username.redirect }}",
+        },
+      };
+      console.clear();
+    </script>
   </head>
   <body>
-    {{ content }}
+    <div
+      class="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8"
+      id="start"
+    >
+      <img
+        class="inline rounded-full mx-auto border-2 border-indigo-600 shadow-2xl"
+        id="avatar"
+        src="https://avatars.githubusercontent.com/u/164765508?s=200&v=4"
+        alt="My avatar on GitHub"
+        width="200"
+        height="200"
+        draggable="false"
+      />
+      <h1
+        class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl text-indigo-600"
+      >
+        <span id="nickname">MoonPwn</span> <br />
+        <div class="text-xl -mt-2 mb-2">
+          @<span id="atnickname">MoonPwn</span>
+        </div>
+      </h1>
+      <div class="leading-7 text-indigo-200 force-text-color-on-preview">
+        {{ content }}
+      </div>
+    </div>
+    <script src="{{ site.url }}/assets/js/api.js"></script>
   </body>
 </html>

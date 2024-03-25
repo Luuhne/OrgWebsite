@@ -1,0 +1,9 @@
+html {
+  background-color: #0a0a0a;
+  background-image: url("../img/background.svg");
+  height: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
