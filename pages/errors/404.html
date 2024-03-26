@@ -26,7 +26,7 @@ permalink: /404
 
 <script>
   const path = window.location.pathname;
-  const rdr = `https://{{ site.github.username.redirect }}.{{ site.github.domain.pages }}/${path}`;
+  const rdr = `https://{{ site.github.username.redirect }}.{{ site.github.domain.pages }}${path}`;
   document.getElementById("old_domain").innerHTML = path;
   document.getElementById("new_domain").innerHTML = rdr;
   document.getElementById("instruction").href = rdr;
