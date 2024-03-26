@@ -1,6 +1,6 @@
 timezone: Europe/Paris
 baseurl: ""
-
+ 
 github:
   domain:
     main: "github.com"

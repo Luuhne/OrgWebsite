@@ -26,7 +26,8 @@ permalink: /repos
 
 <script>
   const path = window.location.pathname;
-  const rdr = `${GitHub.URL.MAIN}/${GitHub.Username.Redirect}?tab=repositories`;
+  const rdr =
+    "https://{{ site.github.domain.main }}/{{ site.github.username.redirect }}?tab=repositories";
   document.getElementById("old_domain").innerHTML = path;
   document.getElementById("new_domain").innerHTML = rdr;
   document.getElementById("instruction").href = rdr;
